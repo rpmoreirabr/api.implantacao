@@ -1,4 +1,4 @@
-﻿using Api.Implantacao.Data.Repositorios;
+﻿using Api.Implantacao.Data.Repositorio;
 using Api.Implantacao.Data.UnityOfWork;
 using Autofac;
 using Autofac.Integration.WebApi;
@@ -31,8 +31,9 @@ namespace Api.Implantacao
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<UnityOfWork>().As<IUnityOfWork<IDocumentClient>>();
-            builder.RegisterType<RepositorioModeloNegocio>().As<IRepositorio<Data.Entidades.ModeloNegocio, string>>();
-            builder.RegisterType<RepositorioProfissao>().As<IRepositorio<Data.Entidades.Profissao, int>>();
+            builder.RegisterType<RepositorioModeloNegocio>().As<IRepositorio<Data.Entidades.ModeloNegocio.ModeloNegocio, string>>();
+            builder.RegisterType<RepositorioProfissao>().As<IRepositorio<Data.Entidades.ModeloNegocio.Profissao, int>>();
+            builder.RegisterType<RepositorioSimulacao>().As<IRepositorio<Data.Entidades.Simulacao.Simulacao, string>>();
             builder.RegisterInstance<Serilog.ILogger>(new LoggerConfiguration()
                 .WriteTo
                 .RollingFile(@"c:\temp\log-{Date}.txt", retainedFileCountLimit: 1)

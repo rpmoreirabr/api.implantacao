@@ -1,4 +1,4 @@
-﻿using Api.Implantacao.Data.Repositorios;
+﻿using Api.Implantacao.Data.Repositorio;
 using Api.Implantacao.Transformadores;
 using API.Infraestrutura.Base.CaixaDeExecucao;
 using API.Infraestrutura.Base.Contexto;
@@ -16,10 +16,10 @@ namespace Api.Implantacao.Controllers
     [RoutePrefix("api/profissao")]
     public class ProfissaoController : BaseController
     {
-        protected IRepositorio<Entidades.Profissao, int> RepositorioProfissao { get; }
+        protected IRepositorio<Entidades.ModeloNegocio.Profissao, int> RepositorioProfissao { get; }
         private Serilog.ILogger Log { get; }
 
-        public ProfissaoController(IRepositorio<Entidades.Profissao, int> repositorioProfissao, Serilog.ILogger logger)
+        public ProfissaoController(IRepositorio<Entidades.ModeloNegocio.Profissao, int> repositorioProfissao, Serilog.ILogger logger)
         {
             RepositorioProfissao = repositorioProfissao;
             Log = logger;
@@ -49,7 +49,7 @@ namespace Api.Implantacao.Controllers
                     var profissoes = profissoesTask.Result;
                     AddCorrelationKey(Contexto.Atual.Id);
                     AddMetadados(new string[] { "cbo", cbo });
-                    API.Infraestrutura.Base.Telemetria.Telemetria.Client.TrackTrace("teste");
+
                     return ResultadoDaOperacao<Contrato.v1.Profissao>.ComValor(profissoes.v1().FirstOrDefault());
                 });
 

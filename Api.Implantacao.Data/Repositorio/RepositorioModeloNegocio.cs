@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Api.Implantacao.Data.UnityOfWork;
 using Microsoft.Azure.Documents;
 
-namespace Api.Implantacao.Data.Repositorios
+namespace Api.Implantacao.Data.Repositorio
 {
-    public class RepositorioModeloNegocio : Repositorio<Entidades.ModeloNegocio, string>
+    public class RepositorioModeloNegocio : Repositorio<Entidades.ModeloNegocio.ModeloNegocio, string>
     {
         public RepositorioModeloNegocio(IUnityOfWork<IDocumentClient> uow) : base(uow)
         {

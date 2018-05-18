@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Api.Implantacao.Data.Repositorios
+namespace Api.Implantacao.Data.Repositorio
 {
-    public class RepositorioProfissao : Repositorio<Entidades.Profissao, Int32>
+    public class RepositorioProfissao : Repositorio<Entidades.ModeloNegocio.Profissao, Int32>
     {
         public RepositorioProfissao(IUnityOfWork<IDocumentClient> uow) : base(uow)
         {

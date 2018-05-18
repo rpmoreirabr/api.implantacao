@@ -10,7 +10,7 @@ using Microsoft.Azure.Documents;
 using Api.Implantacao.Contrato;
 using System.Linq.Expressions;
 
-namespace Api.Implantacao.Data.Repositorios
+namespace Api.Implantacao.Data.Repositorio
 {
     public class Repositorio<T, Tid> : IRepositorio<T, Tid> 
         where T : IEntidade<Tid>        
@@ -38,9 +38,10 @@ namespace Api.Implantacao.Data.Repositorios
         public async Task<T> RecuperarAsync(Tid id)
         {
             var documentClient = UnityOfWork.AbrirConexao();
-            var query = documentClient.CreateDocumentQuery<T>(CollectionLink, $"SELECT * FROM c WHERE c.Id = {id}")
+            var query = typeof(Tid) == typeof(string) ? $"SELECT * FROM c WHERE c.id = '{id}'" :  $"SELECT * FROM c WHERE c.Id = {id}";
+            var docQuery = documentClient.CreateDocumentQuery<T>(CollectionLink, query)
                 .AsDocumentQuery();
-            var retorno = await query.ExecuteNextAsync<T>();
+            var retorno = await docQuery.ExecuteNextAsync<T>();
             return retorno.FirstOrDefault();
         }
 

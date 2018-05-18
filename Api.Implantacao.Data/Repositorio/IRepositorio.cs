@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Api.Implantacao.Data.Repositorios
+namespace Api.Implantacao.Data.Repositorio
 {
     public interface IRepositorio<T, Tid>
         where T : IEntidade<Tid>

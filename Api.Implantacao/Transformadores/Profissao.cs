@@ -8,7 +8,7 @@ namespace Api.Implantacao.Transformadores
 {
     public static class Profissao
     {
-        public static Contratos.Profissao v1(this Entidades.Profissao objeto)
+        public static Contratos.Profissao v1(this Entidades.ModeloNegocio.Profissao objeto)
         {
             return new Contratos.Profissao()
             {
@@ -18,9 +18,9 @@ namespace Api.Implantacao.Transformadores
             };
         }
 
-        public static Entidades.Profissao Entidade(this Contratos.Profissao objeto)
+        public static Entidades.ModeloNegocio.Profissao Entidade(this Contratos.Profissao objeto)
         {
-            return new Entidades.Profissao()
+            return new Entidades.ModeloNegocio.Profissao()
             {
                 Cbo = objeto.Cbo,
                 Descricao = objeto.Descricao,
@@ -28,14 +28,14 @@ namespace Api.Implantacao.Transformadores
             };
         }
 
-        public static List<Entidades.Profissao> Entidades(this List<Contratos.Profissao> objetos)
+        public static List<Entidades.ModeloNegocio.Profissao> Entidades(this List<Contratos.Profissao> objetos)
         {
-            var retorno = new List<Entidades.Profissao>();
+            var retorno = new List<Entidades.ModeloNegocio.Profissao>();
             objetos.ForEach(o => retorno.Add(Entidade(o)));
             return retorno;
         }
 
-        public static List<Contratos.Profissao> v1(this List<Entidades.Profissao> objetos)
+        public static List<Contratos.Profissao> v1(this List<Entidades.ModeloNegocio.Profissao> objetos)
         {
             var retorno = new List<Contratos.Profissao>();
             objetos.ForEach(o => retorno.Add(v1(o)));

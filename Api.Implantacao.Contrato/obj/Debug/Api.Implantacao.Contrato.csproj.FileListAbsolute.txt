@@ -4,3 +4,9 @@ C:\github\Api.Implantacao.Contrato\bin\Debug\Api.Implantacao.Contrato.dll
 C:\github\Api.Implantacao.Contrato\bin\Debug\Api.Implantacao.Contrato.pdb
 C:\github\Api.Implantacao.Contrato\obj\Debug\Api.Implantacao.Contrato.dll
 C:\github\Api.Implantacao.Contrato\obj\Debug\Api.Implantacao.Contrato.pdb
+C:\github\api.implantacao\Api.Implantacao.Contrato\bin\Debug\Api.Implantacao.Contrato.dll
+C:\github\api.implantacao\Api.Implantacao.Contrato\bin\Debug\Api.Implantacao.Contrato.pdb
+C:\github\api.implantacao\Api.Implantacao.Contrato\obj\Debug\Api.Implantacao.Contrato.csprojResolveAssemblyReference.cache
+C:\github\api.implantacao\Api.Implantacao.Contrato\obj\Debug\Api.Implantacao.Contrato.csproj.CoreCompileInputs.cache
+C:\github\api.implantacao\Api.Implantacao.Contrato\obj\Debug\Api.Implantacao.Contrato.dll
+C:\github\api.implantacao\Api.Implantacao.Contrato\obj\Debug\Api.Implantacao.Contrato.pdb
